@@ -1,0 +1,191 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Node Authentication</title>
+    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+
+    <style>
+        body {
+            padding-top: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="container">
+        <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6 col-sm-offset-3 ">
+
+                <h1><span class="fa fa-sign-in"></span> Login</h1>
+                
+                <form action="http://localhost:8080/api/v1/user/login" method="post">
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="text" class="form-control" name="email">
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" class="form-control" name="password">
+                    </div>
+
+                    <button type="submit" class="btn btn-warning btn-lg">Login</button>
+                </form>
+
+                <p>Need an account? <a href="/api/v1/user/signup">Signup</a></p>
+
+                <hr>
+                <p class=" mt-4">
+                    <a href="http://localhost:8080/api/v1/auth/google" class="btn btn-block btn-outline-danger">
+                        <i class="fab fa-google"></i>   Login via
+                        google</a>
+                    <a href="http://localhost:8080/api/v1/auth/github" class="btn btn-block btn-outline-dark"> <i
+                            class="fab fa-github"></i>   Login via
+                        github</a>
+                    <a href="" class="btn btn-block btn-outline-primary"> <i class="fab fa-facebook-f"></i>   Login
+                        via facebook</a>
+                </p>
+
+                <div class="text-center">
+                    <p>A demo by <a href="https://github.com/NVVLuan?tab=repositories">LuanNVV</a>.</p>
+                    <p>Visit the <a href="https://github.com/NVVLuan?tab=repositories">tutorial</a>.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div> -->
+    <div class="relative py-16">
+        <div class="container relative m-auto px-6 text-gray-500 md:px-12 xl:px-40">
+            <div class="m-auto md:w-8/12 lg:w-6/12 xl:w-5/12">
+                <div
+                    class="rounded-3xl border border-gray-100 dark:border-gray-700 bg-slate-300 dark:bg-gray-800 shadow-2xl shadow-gray-600/10 dark:shadow-none">
+                    <div class="p-8 py-12 sm:p-16">
+                        <div class="space-y-4">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Google_Zircon.svg"
+                                loading="lazy" class="w-10" alt="luannvv logo" />
+                            <h2 class="mb-8 text-2xl font-bold text-gray-800 dark:text-white">
+                                Sign in to unlock the <br />
+                                best of LuanNVV.
+                            </h2>
+                        </div>
+                        <div class="mt-16 grid space-y-4">
+                            <a href="http://localhost:8080/api/v1/auth/google"
+                                class="group relative flex h-11 items-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-slate-300 dark:before:bg-gray-700 dark:before:border-gray-600 before:border before:border-gray-200 before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 disabled:before:bg-gray-300 disabled:before:scale-100">
+                                <span
+                                    class="w-full relative flex justify-center items-center gap-3 text-base font-medium text-gray-600 dark:text-gray-200">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
+                                        class="absolute left-0 w-5" alt="google logo" />
+                                    <span>Continue with Google</span>
+                                </span>
+                            </a>
+
+                            <button
+                                class="group relative flex h-11 items-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-slate-300 dark:before:bg-gray-700 dark:before:border-gray-600 before:border before:border-gray-200 before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 disabled:before:bg-gray-300 disabled:before:scale-100">
+                                <span
+                                    class="w-full relative flex justify-center items-center gap-3 text-base font-medium text-gray-600 dark:text-gray-200">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
+                                        class="absolute left-0 w-5" alt="facebook logo" />
+                                    <span>Continue with Facebook</span>
+                                </span>
+                            </button>
+                            <a href="http://localhost:8080/api/v1/auth/github"
+                                class="group relative flex h-11 items-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-slate-300 dark:before:bg-gray-700 dark:before:border-gray-600 before:border before:border-gray-200 before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 disabled:before:bg-gray-300 disabled:before:scale-100">
+                                <span
+                                    class="w-full relative flex justify-center items-center gap-3 text-base font-medium text-gray-600 dark:text-gray-200">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"
+                                        class="absolute left-0 w-5" alt="github logo" />
+                                    <span>Continue with Github</span>
+                                </span>
+                            </a>
+
+                            <p class="text-center text-gray-500 text-xs"> Have a password? <span
+                                    class="text-cyan-600 login-global">login</span></p>
+
+
+                        </div>
+                        <div class="mt-16  space-y-4 login-form hidden">
+                            <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+                                action="http://localhost:8080/api/v1/user/login" method="post">
+                                <div class="mb-4">
+                                    <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+                                        email
+                                    </label>
+                                    <input
+                                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                        id="username" type="text" placeholder="email" name="email">
+                                </div>
+                                <div class="mb-6">
+                                    <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+                                        Password
+                                    </label>
+                                    <input
+                                        class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                                        id="password" type="password" placeholder="******************" name="password">
+                                    <p class="text-red-500 text-xs italic">Please choose a password.</p>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <button
+                                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                                        type="submit">
+                                        Sign In
+                                    </button>
+                                    <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800"
+                                        href="#">
+                                        Forgot Password?
+                                    </a>
+                                </div>
+                            </form>
+
+                        </div>
+                        <p class="text-center text-gray-500 text-xs">
+                            &copy;2020 Acme Corp. All rights reserved.
+                        </p>
+
+                        <div class="mt-32 space-y-4 text-center text-gray-600 dark:text-gray-400 sm:-mb-8">
+
+                            <p class="text-xs">
+                                Contact with LuanNVV
+                                <a href="https://github.com/NVVLuan" class="underline">github</a> and Terms of Service
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const toggle = document.querySelector('.login-global');
+        const florin = document.querySelector('.login-form');
+
+
+
+        toggle.addEventListener('click', () => {
+
+            if (florin.classList.contains('hidden')) {
+                toggle.innerHTML = "Continue with your email address";
+                florin.classList.remove('hidden');
+                florin.classList.add('block');
+
+            } else {
+                toggle.innerHTML = "login";
+                florin.classList.remove('block');
+                florin.classList.add('hidden');
+
+
+            }
+        });
+    </script>
+</body>
+
+</html>
